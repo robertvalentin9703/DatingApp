@@ -4,6 +4,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { routes } from './app.routes';
 import { errorInterceptor } from './_interceptors/error.interceptor';
@@ -18,6 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideToastr({
       positionClass: 'toast-bottom-right'
     }),
-    importProvidersFrom(NgxSpinnerModule)
+    importProvidersFrom(NgxSpinnerModule, TimeagoModule.forRoot())
   ]
 };
