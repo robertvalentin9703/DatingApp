@@ -5,6 +5,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TimeagoModule } from 'ngx-timeago';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { routes } from './app.routes';
 import { errorInterceptor } from './_interceptors/error.interceptor';
@@ -19,6 +20,6 @@ export const appConfig: ApplicationConfig = {
     provideToastr({
       positionClass: 'toast-bottom-right'
     }),
-    importProvidersFrom(NgxSpinnerModule, TimeagoModule.forRoot())
+    importProvidersFrom(NgxSpinnerModule, TimeagoModule.forRoot(), ModalModule.forRoot())
   ]
 };
